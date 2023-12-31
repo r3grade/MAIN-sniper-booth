@@ -1,5 +1,5 @@
 setfpscap(20)
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+game:GetService("RunService"):Set3dRenderingEnabled(true)
 local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast")
 local Players = game:GetService('Players')
 local getPlayers = Players:GetPlayers()
@@ -229,7 +229,7 @@ end
 
 Players.PlayerRemoving:Connect(function(player)
     PlayerInServer = #getPlayers
-    if PlayerInServer < 25 then
+    if PlayerInServer < 15 then
         jumpToServer()
     end
 end) 
