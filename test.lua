@@ -1,4 +1,4 @@
-game:GetService("RunService"):Set3dRenderingEnabled(true)
+game:GetService("RunService"):Set3dRenderingEnabled(false)
 local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast")
 local Players = game:GetService('Players')
 local getPlayers = Players:GetPlayers()
@@ -224,13 +224,5 @@ Players.PlayerRemoving:Connect(function(player)
     if PlayerInServer < 35 then
         jumpToServer()
     end
-end) 
-
-Players.PlayerAdded:Connect(function(player)
-    for i = 1,#alts do
-        if player.Name == alts[i] and alts[i] ~= Players.LocalPlayer.Name then
-            jumpToServer()
-        end
-    end
-end) 
+end)  
 end
