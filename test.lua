@@ -1,5 +1,3 @@
-
-setfpscap(0)
 game:GetService("RunService"):Set3dRenderingEnabled(true)
 local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast")
 local Players = game:GetService('Players')
@@ -13,13 +11,6 @@ local playerID, snipeNormal
 if not snipeNormalPets then
     snipeNormalPets = false
 end
-
-local vu = game:GetService("VirtualUser")
-Players.LocalPlayer.Idled:connect(function()
-   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   task.wait(1)
-   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
 
 for i = 1, PlayerInServer do
    for ii = 1,#alts do
