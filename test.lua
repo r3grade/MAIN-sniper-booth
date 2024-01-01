@@ -1,3 +1,4 @@
+local osclock = os.clock()
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast")
 local Players = game:GetService('Players')
@@ -225,3 +226,9 @@ Players.PlayerRemoving:Connect(function(player)
         jumpToServer()
     end
 end)
+
+while task.wait(1) do
+    if math.floor(os.clock() - osclock) >= math.random(900, 1200) then
+        jumpToServer()
+    end
+end
