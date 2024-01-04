@@ -184,10 +184,11 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         if boughtPet == true then
 	    ping = true
-    elseif gems == 1 and snipeNormalPets == true then
+     elseif gems == 1 and snipeNormalPets == true then
+	task.wait(3.05)
 	snipeNormal = true
 	local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
-        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)  
+        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
 	end
     end
 end
