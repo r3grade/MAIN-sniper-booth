@@ -123,7 +123,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     local purchase = rs.Network.Booths_RequestPurchase
     gems = tonumber(gems)
     local ping = false
-    snipeNormal = false
+    snipeNormal = true
     local type = {}
     pcall(function()
         type = Library.Directory.Pets[item]
@@ -188,6 +188,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
 	snipeNormal = true
 	local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)  
+	end
     end
 end
 
